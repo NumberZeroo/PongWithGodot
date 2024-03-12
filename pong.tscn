@@ -1,5 +1,50 @@
-[gd_scene format=3 uid="uid://dxjqs57iq7767"]
+[gd_scene load_steps=7 format=3 uid="uid://dxjqs57iq7767"]
+
+[ext_resource type="Texture2D" uid="uid://gwa3b0cpxits" path="res://Assets/arts/Board.png" id="1_swc7v"]
+[ext_resource type="Texture2D" uid="uid://syvijswjaqe7" path="res://Assets/arts/Computer.png" id="2_mvfyt"]
+[ext_resource type="Texture2D" uid="uid://dmdx0fafy03qf" path="res://Assets/arts/Player.png" id="3_u6qy4"]
+[ext_resource type="Texture2D" uid="uid://cvc4tv08l3qmx" path="res://Assets/arts/Ball.png" id="4_e5tlk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1goow"]
+size = Vector2(120, 17)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n5kks"]
+radius = 16.0
 
 [node name="Pong" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Board" type="Sprite2D" parent="."]
+position = Vector2(575.5, 323.25)
+scale = Vector2(1.44015, 1.42308)
+texture = ExtResource("1_swc7v")
+
+[node name="player1" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="player1"]
+position = Vector2(114, 171)
+texture = ExtResource("2_mvfyt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player1"]
+position = Vector2(113.5, 171)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1goow")
+
+[node name="player2" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="player2"]
+position = Vector2(1015, 496)
+texture = ExtResource("3_u6qy4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="player2"]
+position = Vector2(1015, 496)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1goow")
+
+[node name="ball" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ball"]
+position = Vector2(466, 301)
+texture = ExtResource("4_e5tlk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ball/Sprite2D"]
+shape = SubResource("CircleShape2D_n5kks")
