@@ -13,3 +13,6 @@ func _process(delta):
 	
 	p_3.text = Global.player1
 	p_4.text = Global.player2
+	
+	if Input.is_action_pressed("Pause"):
+		get_tree().change_scene_to_file("res://Scenes/MenuUI.tscn")

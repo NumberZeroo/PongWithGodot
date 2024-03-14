@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdvb34wq0gk10"]
+[gd_scene load_steps=13 format=3 uid="uid://bdvb34wq0gk10"]
 
 [ext_resource type="Texture2D" uid="uid://gwa3b0cpxits" path="res://Assets/arts/Board.png" id="1_gkkxo"]
 [ext_resource type="Script" path="res://Scripts/pong.gd" id="2_hm6hj"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/player2.gd" id="4_so1xf"]
 [ext_resource type="Texture2D" uid="uid://cvc4tv08l3qmx" path="res://Assets/arts/Ball.png" id="5_atgo3"]
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="5_xp54c"]
+[ext_resource type="AudioStream" uid="uid://dt5xk51aqlgmi" path="res://SoundEffect/laserShoot.wav" id="7_16ray"]
+[ext_resource type="AudioStream" uid="uid://tb6mnu47w1so" path="res://SoundEffect/pickupCoin.wav" id="8_qs8yr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hatw"]
 size = Vector2(120, 23.9997)
@@ -146,6 +148,12 @@ text = "place"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="CollisionEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_16ray")
+
+[node name="PointEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_qs8yr")
 
 [connection signal="body_entered" from="ScoreLeft" to="ball" method="_on_score_left_body_entered"]
 [connection signal="body_entered" from="ScoreRight" to="ball" method="_on_score_right_body_entered"]
