@@ -17,7 +17,7 @@ radius = 16.0
 size = Vector2(1152, 16.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2v2h"]
-size = Vector2(24, 648)
+size = Vector2(24, 647)
 
 [node name="Board" type="Sprite2D"]
 texture_filter = 1
@@ -29,6 +29,7 @@ script = ExtResource("2_hm6hj")
 [node name="player1" type="CharacterBody2D" parent="."]
 position = Vector2(-401, -227.5)
 scale = Vector2(0.695577, 0.703245)
+motion_mode = 1
 script = ExtResource("3_1iamb")
 
 [node name="ColorRect" type="ColorRect" parent="player1"]
@@ -45,6 +46,7 @@ shape = SubResource("RectangleShape2D_4hatw")
 [node name="player2" type="CharacterBody2D" parent="."]
 position = Vector2(-401, -227.5)
 scale = Vector2(0.695577, 0.703245)
+motion_mode = 1
 script = ExtResource("4_so1xf")
 
 [node name="ColorRect2" type="ColorRect" parent="player2"]
@@ -96,7 +98,7 @@ position = Vector2(-401, -227.5)
 scale = Vector2(0.695577, 0.703245)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ScoreRight"]
-position = Vector2(1160, 324)
+position = Vector2(1160, 323.5)
 shape = SubResource("RectangleShape2D_g2v2h")
 
 [node name="Score" type="CanvasLayer" parent="."]
@@ -106,6 +108,7 @@ offset_left = 512.0
 offset_top = 8.0
 offset_right = 576.0
 offset_bottom = 56.0
+theme_type_variation = &"HeaderLarge"
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -116,6 +119,11 @@ offset_left = 576.0
 offset_top = 8.0
 offset_right = 640.0
 offset_bottom = 56.0
+theme_type_variation = &"HeaderLarge"
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="ScoreLeft" to="ball" method="_on_score_left_body_entered"]
+[connection signal="body_entered" from="ScoreRight" to="ball" method="_on_score_right_body_entered"]
