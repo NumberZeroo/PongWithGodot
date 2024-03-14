@@ -126,7 +126,6 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="p3" type="Label" parent="Score"]
-anchors_preset = -1
 offset_left = 376.0
 offset_top = 8.0
 offset_right = 447.0
