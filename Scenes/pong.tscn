@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/player1.gd" id="3_1iamb"]
 [ext_resource type="Script" path="res://Scripts/player2.gd" id="4_so1xf"]
 [ext_resource type="Texture2D" uid="uid://cvc4tv08l3qmx" path="res://Assets/arts/Ball.png" id="5_atgo3"]
-[ext_resource type="Script" path="res://Scenes/ball.gd" id="5_d1trc"]
+[ext_resource type="Script" path="res://Scripts/ball.gd" id="5_xp54c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hatw"]
 size = Vector2(120, 23.9997)
@@ -63,7 +63,7 @@ shape = SubResource("RectangleShape2D_4hatw")
 [node name="ball" type="CharacterBody2D" parent="."]
 position = Vector2(-401, -227.5)
 scale = Vector2(0.695577, 0.703245)
-script = ExtResource("5_d1trc")
+script = ExtResource("5_xp54c")
 
 [node name="Sprite2D" type="Sprite2D" parent="ball"]
 position = Vector2(466, 301)
@@ -121,6 +121,29 @@ offset_right = 640.0
 offset_bottom = 56.0
 theme_type_variation = &"HeaderLarge"
 text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="p3" type="Label" parent="Score"]
+anchors_preset = -1
+offset_left = 376.0
+offset_top = 8.0
+offset_right = 447.0
+offset_bottom = 56.0
+theme_type_variation = &"HeaderLarge"
+text = "place"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="p4" type="Label" parent="Score"]
+offset_left = 704.0
+offset_top = 8.0
+offset_right = 775.0
+offset_bottom = 56.0
+theme_type_variation = &"HeaderLarge"
+text = "place"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
