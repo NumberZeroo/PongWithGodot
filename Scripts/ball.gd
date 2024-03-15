@@ -10,7 +10,7 @@ func _ready():
 	speed = 400
 	
 	v1 = randf_range(-0.5, 1)
-	v2 = randf_range(-3, 2)
+	v2 = randf_range(-0.5, 2)
 	
 	set_velocity(Vector2(v1, v2))
 	position = Vector2(-300, -230)

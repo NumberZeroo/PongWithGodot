@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdvb34wq0gk10"]
+[gd_scene load_steps=15 format=3 uid="uid://bdvb34wq0gk10"]
 
 [ext_resource type="Texture2D" uid="uid://gwa3b0cpxits" path="res://Assets/arts/Board.png" id="1_gkkxo"]
 [ext_resource type="Script" path="res://Scripts/pong.gd" id="2_hm6hj"]
 [ext_resource type="Script" path="res://Scripts/player1.gd" id="3_1iamb"]
+[ext_resource type="Texture2D" uid="uid://dmdx0fafy03qf" path="res://Assets/arts/Player.png" id="4_hhfpt"]
 [ext_resource type="Script" path="res://Scripts/player2.gd" id="4_so1xf"]
 [ext_resource type="Texture2D" uid="uid://cvc4tv08l3qmx" path="res://Assets/arts/Ball.png" id="5_atgo3"]
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="5_xp54c"]
+[ext_resource type="Texture2D" uid="uid://syvijswjaqe7" path="res://Assets/arts/Computer.png" id="6_xkpl0"]
 [ext_resource type="AudioStream" uid="uid://dt5xk51aqlgmi" path="res://SoundEffect/laserShoot.wav" id="7_16ray"]
 [ext_resource type="AudioStream" uid="uid://tb6mnu47w1so" path="res://SoundEffect/pickupCoin.wav" id="8_qs8yr"]
 
@@ -34,11 +36,12 @@ scale = Vector2(0.695577, 0.703245)
 motion_mode = 1
 script = ExtResource("3_1iamb")
 
-[node name="ColorRect" type="ColorRect" parent="player1"]
-offset_left = 104.0
-offset_top = 112.0
-offset_right = 128.0
-offset_bottom = 232.0
+[node name="Sprite2D" type="Sprite2D" parent="player1"]
+texture_filter = 1
+position = Vector2(115.751, 172)
+rotation = 3.14159
+scale = Vector2(1.44117, 1)
+texture = ExtResource("4_hhfpt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player1"]
 position = Vector2(116.001, 172)
@@ -51,11 +54,12 @@ scale = Vector2(0.695577, 0.703245)
 motion_mode = 1
 script = ExtResource("4_so1xf")
 
-[node name="ColorRect2" type="ColorRect" parent="player2"]
-offset_left = 999.998
-offset_top = 440.0
-offset_right = 1024.0
-offset_bottom = 560.0
+[node name="Sprite2D" type="Sprite2D" parent="player2"]
+texture_filter = 1
+position = Vector2(1011.75, 500)
+rotation = 3.14159
+scale = Vector2(1.44118, 0.999999)
+texture = ExtResource("6_xkpl0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="player2"]
 position = Vector2(1012, 500)
