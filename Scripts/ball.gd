@@ -10,7 +10,7 @@ func _ready():
 	speed = 400
 	
 	v1 = randf_range(-0.5, 1)
-	v2 = randf_range(-0.5, 2)
+	v2 = randf_range(-0.5, 1)
 	
 	set_velocity(Vector2(v1, v2))
 	position = Vector2(-300, -230)
@@ -22,7 +22,7 @@ func _physics_process(delta):
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
 		collision_effect.play()
-		speed += log(speed)
+		speed += log(speed)*0.5
 
 func _on_score_left_body_entered(this):
 	_ready()
