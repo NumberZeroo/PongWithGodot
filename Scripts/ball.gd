@@ -8,9 +8,10 @@ var v2
 
 func _ready():
 	speed = 400
+	var arr = [-1,1]
 	
-	v1 = randf_range(-0.5, 1)
-	v2 = randf_range(-0.5, 1)
+	v1 = randf_range(-0.9, 0.9)
+	v2 = sqrt(1-v1*v1) * arr[randi()%arr.size()] 
 	
 	set_velocity(Vector2(v1, v2))
 	position = Vector2(-300, -230)
